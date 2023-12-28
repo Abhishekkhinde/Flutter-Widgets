@@ -1,0 +1,31 @@
+                        #Flutter command in linux#   
+
+    1) For create flutter project
+        command >  Flutter create <Project_name>
+
+    2) open project
+        command > cd <project_name>
+
+    3) For see connected devices to linux devices
+        command > flutter devices
+
+    4) To Run in linux devices
+        command > flutter run -d linux
+
+    5) To run in chrome
+        command > Flutter run -d chrome
+
+    6) For Find available emulator 
+        command > flutter emulators
+
+    7) For Run emulator 
+        command > flutter emulators --launch <device name>
+
+    8) For Run any emulator
+        command > flutter run
+
+    9) For see available 
+        command > flutter devices
+
+    10) For run flutter in mobile device
+        command > flutter run -d <device name / id>
