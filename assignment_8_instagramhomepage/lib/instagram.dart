@@ -143,10 +143,10 @@ class _InstagramState extends State<Instagram> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          _isPost2Liked = !_isPost2Liked;
+                          _isPost3Liked = !_isPost3Liked;
                         });
                       },
-                      icon: _isPost2Liked
+                      icon: _isPost3Liked
                           ? const Icon(
                               Icons.favorite_rounded,
                               color: Colors.red,
