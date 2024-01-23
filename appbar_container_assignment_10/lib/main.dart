@@ -1,5 +1,6 @@
 import 'package:appbar_container_assignment_10/fourapp.dart';
 import 'package:appbar_container_assignment_10/nineapp.dart';
+import 'package:appbar_container_assignment_10/tenapp.dart';
 import 'package:flutter/material.dart';
 import 'oneapp.dart';
 import 'twoapp.dart';
@@ -21,7 +22,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: EightApp(),
+      home: TenApp(),
     );
   }
 }

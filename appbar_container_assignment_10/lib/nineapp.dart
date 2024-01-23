@@ -21,8 +21,21 @@ class _NineAppState extends State<NineApp> {
               Container(
                 height: 300,
                 width: 300,
-                color: Colors.red,
-                padding: EdgeInsets.all(20),
+
+                decoration: BoxDecoration(
+                    color: Colors.red, borderRadius: BorderRadius.circular(20)),
+                // padding: EdgeInsets.all(20),
+                // margin: EdgeInsets.all(20),
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.amber,
+                    borderRadius: BorderRadius.circular(
+                      20,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
