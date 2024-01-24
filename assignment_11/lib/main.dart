@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text("Assignment 11"),
-          backgroundColor: Colors.white,
           centerTitle: true,
         ),
         body: SizedBox(
