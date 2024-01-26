@@ -24,14 +24,14 @@ class _MainApp extends State<MainApp> {
               children: [
                 Container(
                   width: 410,
-                  height: 287,
+                  height: 310,
                   decoration: const BoxDecoration(
                     color: Colors.orange,
                   ),
                 ),
                 Container(
                   width: 410,
-                  height: 287,
+                  height: 250,
                   child: Image.asset("assets/Ashoka_Chakra.png"),
                   decoration: const BoxDecoration(
                       color: Colors.white,
@@ -40,7 +40,7 @@ class _MainApp extends State<MainApp> {
                 ),
                 Container(
                   width: 410,
-                  height: 287,
+                  height: 305,
                   color: Colors.green,
                 ),
               ],
