@@ -55,7 +55,7 @@ class _IndianFlagState extends State<IndianFlag> {
                   ? Container(
                       height: 500,
                       width: 20,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Colors.black,
                           borderRadius: BorderRadius.all(Radius.circular(10))),
                     )
