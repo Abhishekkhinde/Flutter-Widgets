@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Indian Flag',
       home: IndianFlag(),
     );
@@ -54,7 +55,9 @@ class _IndianFlagState extends State<IndianFlag> {
                   ? Container(
                       height: 500,
                       width: 20,
-                      color: Colors.black,
+                      decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.all(Radius.circular(10))),
                     )
                   : Container(),
               Column(
