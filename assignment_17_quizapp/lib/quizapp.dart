@@ -7,132 +7,32 @@ class QuizApp extends StatefulWidget {
   State<QuizApp> createState() => _QuizAppState();
 }
 
-class _QuizAppState extends State<QuizApp> {
-  int counter = 1;
-  int index = 0;
-
-  List question = [
-    "what is your favorite player",
-    "what is your favorite sport",
-    "_______ Data type can be  used to represent true and false"
+class _QuizApp extends State<QuizApp> {
+  List<Map> allQuestions = [
+    {
+      "question": "who is the founder of microsoft",
+      "options": ["steve job", "jeff bezos", "Bill Gates", "Elon Musk"],
+      "answerIndex": 2,
+    },
+    {
+      "question": "who is the founder of Apple",
+      "options": ["steve job", "jeff bezos", "Bill Gates", "Elon Musk"],
+      "answerIndex": 0,
+    },
+    {
+      "question": "who is the founder of Amazon",
+      "options": ["steve job", "jeff bezos", "Bill Gates", "Elon Musk"],
+      "answerIndex": 1,
+    },
+    {
+      "question": "who is the founder of Tesla",
+      "options": ["steve job", "jeff bezos", "Bill Gates", "Elon Musk"],
+      "answerIndex": 3,
+    },
+    {
+      "question": "who is the founder of Google",
+      "options": ["steve job", "Lary Page", "Bill Gates", "Elon Musk"],
+      "answerIndex": 2,
+    },
   ];
-
-  List option1 = ["sachin", "option1", "option1"];
-  List option2 = ["virat", "option2", "option2"];
-  List option3 = ["rohit", "option3", "option3"];
-  List option4 = ["ishan", "option4", "option4"];
-
-  List? answer;
-
-  Color truecolor() {
-    if (question[index] == option1) {
-      return Colors.blue;
-    } else {
-      return Colors.red;
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          "Quiz App",
-          style: TextStyle(fontWeight: FontWeight.w400),
-        ),
-        backgroundColor: Colors.green,
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(
-            () {
-              if (counter < question.length) {
-                counter++;
-                index++;
-              } else {
-                counter = 1;
-                index = 0;
-              }
-            },
-          );
-        },
-        backgroundColor: Colors.blue,
-        child: const Icon(Icons.double_arrow),
-      ),
-      body: Column(
-        //mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                "Question $counter / 10",
-                style: const TextStyle(fontSize: 20),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          SizedBox(
-            child: Text("Quesion $counter: "),
-          ),
-          SizedBox(
-            child: Text(question[index], style: const TextStyle(fontSize: 20)),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          SizedBox(
-            height: 40,
-            width: 300,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text(option1[index]),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          SizedBox(
-            height: 40,
-            width: 300,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text(option2[index]),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          SizedBox(
-            height: 40,
-            width: 300,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text(option3[index]),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          SizedBox(
-            height: 40,
-            width: 300,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text(option4[index]),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-        ],
-      ),
-    );
-  }
 }
