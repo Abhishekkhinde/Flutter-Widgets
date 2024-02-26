@@ -9,6 +9,10 @@ class ToDoList extends StatefulWidget {
 }
 
 class _ToDoListState extends State {
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _dateController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     List<Color> cardColorList = const [
@@ -57,7 +61,7 @@ class _ToDoListState extends State {
                               ),
                               child: Center(
                                 child: Image.network(
-                                  "https://img.icons8.com/?size=100&id=53386&format=png",
+                                  "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png",
                                   width: 23,
                                   height: 19,
                                 ),
@@ -126,26 +130,108 @@ class _ToDoListState extends State {
               );
             }),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        showModalBottomSheet(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
             context: context,
             builder: (BuildContext context) {
               return Container(
-                margin: EdgeInsets.only(left: 10, right: 10, top: 13),
+                margin: const EdgeInsets.only(
+                    left: 10, right: 10, top: 13, bottom: 26),
                 width: double.infinity,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Create task",
+                          style: GoogleFonts.quicksand(
+                            textStyle: const TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                     Text(
-                      "Create Task",
+                      "Title",
                       style: GoogleFonts.quicksand(
-                          textStyle: TextStyle(
-                              fontWeight: FontWeight.w600, fontSize: 22)),
+                          textStyle: const TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w400,
+                        color: Color.fromRGBO(0, 139, 148, 1),
+                      )),
+                    ),
+                    TextField(
+                      controller: _titleController,
+                      decoration: const InputDecoration(
+                        hintText: "Lorem Ipsum typeseting industry. ",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(0.5),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "Description",
+                      style: GoogleFonts.quicksand(
+                          textStyle: const TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w400,
+                        color: Color.fromRGBO(0, 139, 148, 1),
+                      )),
+                    ),
+                    TextField(
+                      controller: _descriptionController,
+                      decoration: const InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(0.5),
+                            ),
+                          ),
+                          hintText:
+                              "Simply dummy text of the printing and  has been the typesetting Lorem Ipsum has been the industry."),
+                    ),
+                    Text(
+                      "Date",
+                      style: GoogleFonts.quicksand(
+                          textStyle: const TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w400,
+                        color: Color.fromRGBO(0, 139, 148, 1),
+                      )),
+                    ),
+                    TextField(
+                      controller: _dateController,
+                      decoration: const InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ),
+                          ),
+                          hintText: "Enter Date",
+                          suffixIcon: Icon(Icons.calendar_month)),
+                    ),
+                    SizedBox(
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text("Submit"),
+                      ),
                     )
                   ],
                 ),
               );
-            });
-      }),
+            },
+          );
+        },
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
